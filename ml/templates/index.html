@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+  </head>
+  <body>
+    <h1>Carrier Predictor</h1>
+    <form action='/result' method='POST'>
+        {% csrf_token %}
+        
+        <p>% in OS :</p>
+        <input type="number" name="os">
+        <br>
+  
+        <p>% in Algoritms :</p>
+        <input type="number" name="al">
+        <br>
+  
+        <p>% in Programming :</p>
+        <input type="number" name="pc">
+        <br>
+  
+        <p>% in Software Engineering :</p>
+        <input type="number" name="sw">
+        <br>
+  
+        <p>% in Computer Networks :</p>
+        <input type="number" name="cn">
+        <br>
+  
+        <p>% in Electronics :</p>
+        <input type="number" name="ec">
+        <br>
+  
+        <p>% in Computer Organisation and Architectures :</p>
+        <input type="number" name="coa">
+        <br>
+  
+        <p>% in Maths :</p>
+        <input type="number" name="mt">
+        <br>
+        
+        <p>% in Communication Skills :</p>
+        <input type="number" name="cs">
+        <br>
+
+        <p>Hours working per day :</p>
+        <input type="number" name="hr">
+        <br>
+
+        <p>Logical Quotient Rating :</p>
+        <input type="number" name="lq">
+        <br>
+
+        <p>Number of hackathons :</p>
+        <input type="number" name="hack">
+        <br>
+
+        <p>Coding Skills Rating :</p>
+        <input type="number" name="csr">
+        <br>
+
+        <p>Public Speaking Points :</p>
+        <input type="number" name="psp">
+        <br>
+
+        <p>Can work long time before system? :</p>
+        <input type="number" name="cw">
+        <br>
+
+        <p>Self Learning Capability :</p>
+        <input type="number" name="cl">
+        <br>
+
+        <p>Extra Courses did :</p>
+        <input type="number" name="ex">
+        <br>
+
+        <input type="submit" value='Get Predictions'>
+      </form>
+  </body>
+</html>
