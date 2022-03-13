@@ -48,7 +48,7 @@ def case(i):
 def home(response):
     # os = int(response.POST['os'])
     a=[response.POST['os'],response.POST['al'],response.POST['pc'], response.POST['sw'], response.POST['cn'], response.POST['ec'], response.POST['coa'], response.POST['mt'], response.POST['cs'], response.POST['hr'], response.POST['lq'], response.POST['hack'], response.POST['csr'], response.POST['psp'], response.POST['cw'], response.POST['cl'], response.POST['ex']]
-    model = pickle.load(open(r"C:\Users\Amitesh\Desktop\hack\ml\ml\predictionsmodel.sav", "rb"))
+    model = pickle.load(open(r"C:\Users\Amitesh\Desktop\final\Hackathon202212\ml\ml\predictionsmodel.sav", "rb"))
     # a = [55,59,24,89,61,55,32,51,96,7,6,2,5,7,1,0,0]
     predictedJob = model.predict([a])
     import math
@@ -62,7 +62,8 @@ def home(response):
     #def getPredictions():
         #a = [os, al, pc, sw, cn, ec, coa, mt, cs, hr, lq, hack, csr, psp, cw, cl, ex ]
     
-    return HttpResponse(n)
+    return render(response, "result.html", {'n':n})
+    #HttpResponse(n)
   #  return pred[z]
 
        
