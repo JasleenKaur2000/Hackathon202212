@@ -46,10 +46,8 @@ def case(i):
       return switcher.get(i, "invalid prediction")
 
 def home(response):
-    # os = int(response.POST['os'])
     a=[response.POST['os'],response.POST['al'],response.POST['pc'], response.POST['sw'], response.POST['cn'], response.POST['ec'], response.POST['coa'], response.POST['mt'], response.POST['cs'], response.POST['hr'], response.POST['lq'], response.POST['hack'], response.POST['csr'], response.POST['psp'], response.POST['cw'], response.POST['cl'], response.POST['ex']]
     model = pickle.load(open(r"C:\Users\Amitesh\Desktop\final\Hackathon202212\ml\ml\predictionsmodel.sav", "rb"))
-    # a = [55,59,24,89,61,55,32,51,96,7,6,2,5,7,1,0,0]
     predictedJob = model.predict([a])
     import math
     y = predictedJob[0]
@@ -58,47 +56,5 @@ def home(response):
     n = case(z)
     
     
-    
-    #def getPredictions():
-        #a = [os, al, pc, sw, cn, ec, coa, mt, cs, hr, lq, hack, csr, psp, cw, cl, ex ]
-    
     return render(response, "result.html", {'n':n})
-    #HttpResponse(n)
-  #  return pred[z]
-
-       
-
-# our result page view
-# def result(request):
-#     os = int(request.GET['os'])
-#     al = int(request.GET['al'])
-#     pc = int(request.GET['pc'])
-#     sw = int(request.GET['sw'])
-#     cn = int(request.GET['cn'])
-#     ec = int(request.GET['ec'])
-#     coa = int(request.GET['coa'])
-#     mt = int(request.GET['mt'])
-#     cs = int(request.GET['cs'])
-#     hr = int(request.GET['hr'])
-#     lq = int(request.GET['lq'])
-#     hack = int(request.GET['hack'])
-#     csr = int(request.GET['csr'])
-#     psp = int(request.GET['psp'])
-#     cw = int(request.GET['cw'])
-#     cl = int(request.GET['cl'])
-#     ex = int(request.GET['ex'])
-
-#     #result = getPredictions(os, al, pc, sw, cn, ec, coa, mt, cs, hr, lq, hack, csr, psp, cw, cl, ex )
-
-#     #return render(request, 'result.html', {'result':result})
-#     return render("Hello World",'result.html')
     
-
-# def myfunc():
-#     a = "Hello"
-#     return a
-
-
-    # data ="<b>Hi There!! </b>"+str(a) 
-    
-    # return render(response,'index.html',context={"name":"ss"});
